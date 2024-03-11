@@ -1,0 +1,5 @@
+package lightcontrolproducer;
+
+public class LightControlServiceImpl {
+
+}

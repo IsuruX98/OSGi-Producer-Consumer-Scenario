@@ -1,0 +1,9 @@
+!SESSION 2024-03-11 14:19:00.432 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.7
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -dev file:E:/Projects/SLIIT/OSGi/.metadata/.plugins/org.eclipse.pde.core/lightController/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-03-11 14:19:05.469
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
