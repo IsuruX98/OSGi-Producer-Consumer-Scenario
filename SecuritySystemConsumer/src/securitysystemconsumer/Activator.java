@@ -5,11 +5,14 @@ import java.util.Scanner;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+
+import lightcontrolproducer.LightControlService;
 import securitysystemproducer.SecuritySystemService;
 
 public class Activator implements BundleActivator {
 	
 	private SecuritySystemService securitySystemService;
+	private LightControlService lightControlService;
 	private Scanner scanner;
 
 
@@ -20,6 +23,10 @@ public class Activator implements BundleActivator {
 				.getServiceReference(SecuritySystemService.class.getName());
 		securitySystemService = (SecuritySystemService) bundleContext.getService(securitySystemServiceReference);
 		
+		ServiceReference lightControlServiceReference = bundleContext
+				.getServiceReference(LightControlService.class.getName());
+		lightControlService = (LightControlService) bundleContext.getService(lightControlServiceReference);
+
 		
 		scanner = new Scanner(System.in);
 		runConsumer();
@@ -68,6 +75,8 @@ public class Activator implements BundleActivator {
 		System.out.println("6. Open a Door");
 		System.out.println("7. Close a Door");
 		System.out.println("8. Door Status");
+		System.out.println("9, Turn On Lights");
+		System.out.println("10, Turn Off Lights");
 
 		System.out.print("Enter your choice: ");
 		int choice = scanner.nextInt();
@@ -112,6 +121,16 @@ public class Activator implements BundleActivator {
 			System.out.println("Enter Door ID to check Status");
 			String doorId1 = scanner.next();
 			securitySystemService.getDoorStatus(doorId1);
+			break;
+		case 9:
+			System.out.println("Enter Light ID");
+			String lightId = scanner.next();
+			lightControlService.turnOnLight(lightId);
+			break;
+		case 10:
+			System.out.println("Enter Light ID");
+			String lightId1 = scanner.next();
+			lightControlService.turnOffLight(lightId1);
 			break;
 		default:
 			System.out.println("Invalid choice");
