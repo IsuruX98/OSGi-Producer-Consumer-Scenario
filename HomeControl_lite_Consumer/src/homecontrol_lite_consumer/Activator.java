@@ -14,6 +14,7 @@ public class Activator implements BundleActivator {
 	private LightControlService lightControlService;
 	private SecuritySystemService securitySystemService;
 	private Scanner scanner;
+	
 
 	public void start(BundleContext context) throws Exception {
 		System.out.println("Starting Home Control and Security System Consumer...");
