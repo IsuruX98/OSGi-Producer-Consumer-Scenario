@@ -154,7 +154,9 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
 		for(Door door : doors) {
 			Camera camera = door.getDoorCamera();
 			if(cameraId.equals(camera.getCameraId())) {
-				door.checkStatus();
+				door.open();
+				System.out.println("Open the Door No: " + door.getDoorId() + "Associated with Camera No: " + camera.getCameraId());
+				
 			}
 		}
 	}
