@@ -23,7 +23,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
         securityCameras = new ArrayList<>();
         alarmActivated = false;
         scheduleTimers = new HashMap<>();
-        
+        doors = new ArrayList<>();
 
     }
     
@@ -143,7 +143,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
 			doors.add(door);
 		}
 		else
-			System.out.println("The Door ID" + doorId + "is already Available");
+			System.out.println("The Door ID " + doorId + " is already Available");
 
 		
 	}
@@ -155,7 +155,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
 			Camera camera = door.getDoorCamera();
 			if(cameraId.equals(camera.getCameraId())) {
 				door.open();
-				System.out.println("Open the Door No: " + door.getDoorId() + "Associated with Camera No: " + camera.getCameraId());
+				System.out.println("Open the Door No: " + door.getDoorId() + " Associated with Camera No: " + camera.getCameraId());
 				
 			}
 		}
@@ -168,10 +168,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
 			Camera camera = door.getDoorCamera();
 			if(cameraId.equals(camera.getCameraId()))
 				door.close();
-				System.out.println("Closed the Door No: " + door.getDoorId() + "Associated with Camera No: " + camera.getCameraId());
-		}
-		
-		
+			}
 	}
 	
 	private boolean isDoorExist(String doorId) {

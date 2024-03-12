@@ -5,8 +5,6 @@ import java.util.Scanner;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
-
-import lightcontrolproducer.LightControlService;
 import securitysystemproducer.SecuritySystemService;
 
 public class Activator implements BundleActivator {
@@ -42,7 +40,8 @@ public class Activator implements BundleActivator {
 			System.out.println("2. Exit");
 
 			System.out.print("Enter your choice: ");
-			int choice = scanner.nextInt();
+		    int choice = scanner.nextInt();
+		    System.out.print("");
 
 			switch (choice) {
 
