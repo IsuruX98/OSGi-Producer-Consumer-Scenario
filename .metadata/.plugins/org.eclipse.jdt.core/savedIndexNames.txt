@@ -1,12 +1,4 @@
 INDEX VERSION 1.134+E:\Projects\SLIIT\OSGi\.metadata\.plugins\org.eclipse.jdt.core
-651696833.index
-1612002425.index
-3594303822.index
 3877592159.index
 1270827554.index
-1676519962.index
-3312346487.index
-3413725848.index
-2461578805.index
-1425718998.index
 1865797976.index

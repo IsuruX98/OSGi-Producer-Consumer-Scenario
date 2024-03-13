@@ -1,4 +1,4 @@
-package homecontrol_lite_consumer;
+package lightsafepackage;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

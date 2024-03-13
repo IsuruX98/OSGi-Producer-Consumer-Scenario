@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: HomeControl_lite_Consumer
-Bundle-SymbolicName: HomeControl_lite_Consumer1
+Bundle-SymbolicName: LightSafePackageConsumer
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: homecontrol_lite_consumer.Activator
+Bundle-Activator: lightsafepackage.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: HomeControl.lite.Consumer
 Import-Package: lightcontrolproducer,
