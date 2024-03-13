@@ -1,6 +1,6 @@
 #encoding=UTF-8
 #version=1
-HomeControl_lite_Consumer,1.0.0.qualifier,file:/E:/Projects/SLIIT/OSGi/HomeControl_lite_Consumer/,4,true
+HomeControl_lite_Consumer1,1.0.0.qualifier,file:/E:/Projects/SLIIT/OSGi/HomeControl_lite_Consumer1/,4,true
 LightControlProducer,1.0.0.qualifier,file:/E:/Projects/SLIIT/OSGi/LightControlProducer/,4,true
 SecuritySystemProducer,1.0.0.qualifier,file:/E:/Projects/SLIIT/OSGi/SecuritySystemProducer/,4,true
 bcpg,1.77.0,file:/C:/Users/isuru/.p2/pool/plugins/bcpg_1.77.0.jar,4,true

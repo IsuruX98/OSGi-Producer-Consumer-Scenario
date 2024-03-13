@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: HomeControl_lite_Consumer
-Bundle-SymbolicName: HomeControl_lite_Consumer
+Bundle-SymbolicName: HomeControl_lite_Consumer1
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: homecontrol_lite_consumer.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-17

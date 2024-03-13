@@ -20,12 +20,8 @@ public class LightControlServiceImpl implements LightControlService {
 
 		// Initialize light status, brightness, and color
 		
-		lightStatus.put("kitchen", false);
-		lightBrightness.put("kitchen", 100);
-		lightColor.put("kitchen", "white");
-		lightStatus.put("living_room", false);
-		lightBrightness.put("living_room", 100);
-		lightColor.put("living_room", "white");
+		addLight("kitchen", false, 100, "white");
+        addLight("living_room", false, 100, "white");
 
 		// Create presets
 		createPresets();
@@ -55,6 +51,14 @@ public class LightControlServiceImpl implements LightControlService {
 		settings.put("color", color);
 		return settings;
 	}
+	
+	@Override
+    public void addLight(String lightId, boolean status, int brightness, String color) {
+        lightStatus.put(lightId, status);
+        lightBrightness.put(lightId, brightness);
+        lightColor.put(lightId, color);
+        System.out.println("Light " + lightId + " added");
+    }
 
 	@Override
 	public void turnOnLight(String lightId) {

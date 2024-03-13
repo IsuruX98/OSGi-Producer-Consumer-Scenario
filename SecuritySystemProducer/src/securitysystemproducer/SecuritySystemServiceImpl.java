@@ -8,9 +8,13 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import models.Camera;
+import models.Door;
+
 public class SecuritySystemServiceImpl implements SecuritySystemService {
 	private boolean armed;
     private List<Camera> securityCameras;
+    private List<Door> doors;
     private boolean alarmActivated;
     private Map<String, Timer> scheduleTimers;
 
@@ -19,18 +23,10 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
         securityCameras = new ArrayList<>();
         alarmActivated = false;
         scheduleTimers = new HashMap<>();
-        
-     // Add default cameras
-        addDefaultCameras();
+        doors = new ArrayList<>();
+
     }
     
-    private void addDefaultCameras() {
-        addSecurityCamera("Camera1");
-        addSecurityCamera("Camera2");
-        addSecurityCamera("Camera3");
-        addSecurityCamera("Camera4");
-    }
-
     @Override
     public void armSecuritySystem() {
         if (!armed) {
@@ -39,7 +35,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
             // Turn on cameras
             for (Camera camera : securityCameras) {
                 camera.turnOn();
-                System.out.println("Camera " + camera.getId() + " turned on");
+                System.out.println("Camera " + camera.getCameraId() + " turned on");
             }
         } else {
             System.out.println("Security system is already armed");
@@ -54,7 +50,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
             // Turn off cameras
             for (Camera camera : securityCameras) {
                 camera.turnOff();
-                System.out.println("Camera " + camera.getId() + " turned off");
+                System.out.println("Camera " + camera.getCameraId() + " turned off");
             }
         } else {
             System.out.println("Security system is already disarmed");
@@ -80,7 +76,7 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
     @Override
     public void removeSecurityCamera(String cameraId) {
         for (Camera camera : securityCameras) {
-            if (camera.getId().equals(cameraId)) {
+            if (camera.getCameraId().equals(cameraId)) {
                 securityCameras.remove(camera);
                 System.out.println("Security camera " + cameraId + " removed");
                 return;
@@ -131,32 +127,66 @@ public class SecuritySystemServiceImpl implements SecuritySystemService {
 
     private boolean cameraExists(String cameraId) {
         for (Camera camera : securityCameras) {
-            if (camera.getId().equals(cameraId)) {
+            if (camera.getCameraId().equals(cameraId)) {
                 return true;
             }
         }
         return false;
     }
+    
+	@Override
+	public void addDoor(String doorId, String cameraId) {
+		
+		if(!isDoorExist(doorId)) {
+			Camera doorCamera = new Camera(cameraId);
+			Door door = new Door(doorId, doorCamera);
+			doors.add(door);
+		}
+		else
+			System.out.println("The Door ID " + doorId + " is already Available");
 
-    private class Camera {
-        private String id;
-        private boolean on;
+		
+	}
+	
+	@Override
+	public void openDoorByCameraId(String cameraId) {
+		
+		for(Door door : doors) {
+			Camera camera = door.getDoorCamera();
+			if(cameraId.equals(camera.getCameraId())) {
+				door.open();
+				System.out.println("Open the Door No: " + door.getDoorId() + " Associated with Camera No: " + camera.getCameraId());
+				
+			}
+		}
+	}
 
-        public Camera(String id) {
-            this.id = id;
-            this.on = false;
-        }
+	@Override
+	public void closeDoorByCameraId(String cameraId) {
+		
+		for(Door door : doors) {
+			Camera camera = door.getDoorCamera();
+			if(cameraId.equals(camera.getCameraId()))
+				door.close();
+			}
+	}
+	
+	private boolean isDoorExist(String doorId) {
+		for(Door door : doors) {
+			if(door.getDoorId().equals(doorId))
+				return true;
+		}
+		return false;
+	}
 
-        public String getId() {
-            return id;
-        }
+	@Override
+	public void getDoorStatus(String doorId) {
+		
+		for(Door door : doors) {
+			if(doorId.equals(door.getDoorId())) {
+				door.checkStatus();
+			}
+		}
+	}
 
-        public void turnOn() {
-            on = true;
-        }
-
-        public void turnOff() {
-            on = false;
-        }
-    }
 }

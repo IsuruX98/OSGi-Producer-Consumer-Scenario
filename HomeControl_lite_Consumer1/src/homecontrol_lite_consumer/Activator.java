@@ -41,9 +41,7 @@ public class Activator implements BundleActivator {
 			System.out.println("\nOptions:");
 			System.out.println("1. Light Control");
 			System.out.println("2. Security System Control");
-			System.out.println("3. Preset Management");
-			System.out.println("4. Schedule Management");
-			System.out.println("5. Exit");
+			System.out.println("3. Exit");
 
 			System.out.print("Enter your choice: ");
 			int choice = scanner.nextInt();
@@ -56,12 +54,6 @@ public class Activator implements BundleActivator {
 				runSecuritySystemOptions();
 				break;
 			case 3:
-				runPresetManagement();
-				break;
-			case 4:
-				runScheduleManagement();
-				break;
-			case 5:
 				System.out.println("Exiting...");
 				return;
 			default:
@@ -76,6 +68,8 @@ public class Activator implements BundleActivator {
 		System.out.println("2. Dim light");
 		System.out.println("3. Change light color");
 		System.out.println("4. Get Light Status");
+		System.out.println("5. Preset Management");
+		System.out.println("6. Add a Light");
 
 		System.out.print("Enter your choice: ");
 		int choice = scanner.nextInt();
@@ -93,9 +87,29 @@ public class Activator implements BundleActivator {
 		case 4:
 			getLightStatus();
             break;
+		case 5:
+			runPresetManagement();
+			break;
+		case 6:
+            addLight(); 
+            break;
 		default:
 			System.out.println("Invalid choice");
 		}
+	}
+	
+	private void addLight() {
+	    System.out.print("Enter light ID: ");
+	    String lightId = scanner.next();
+	    System.out.print("Enter initial status (true/false): ");
+	    boolean status = scanner.nextBoolean();
+	    System.out.print("Enter initial brightness (0-100): ");
+	    int brightness = scanner.nextInt();
+	    System.out.print("Enter initial color: ");
+	    String color = scanner.next();
+
+	    lightControlService.addLight(lightId, status, brightness, color);
+	    System.out.println("Light " + lightId + " added.");
 	}
 	
 	private void getLightStatus() {
@@ -179,6 +193,11 @@ public class Activator implements BundleActivator {
 		System.out.println("2. Disarm security system");
 		System.out.println("3. Get security system status");
 		System.out.println("4. Add security camera");
+		System.out.println("5. Schedule Management");
+		System.out.println("6. Add a Door");
+		System.out.println("7. Open a Door");
+		System.out.println("8. Close a Door");
+		System.out.println("9. Door Status");
 
 		System.out.print("Enter your choice: ");
 		int choice = scanner.nextInt();
@@ -201,6 +220,32 @@ public class Activator implements BundleActivator {
 		    String cameraId = scanner.next();
 		    securitySystemService.addSecurityCamera(cameraId);
 		    System.out.println("Camera " + cameraId + " added.");
+		    break;
+		case 5:
+			runScheduleManagement();
+			break;
+		case 6:
+			System.out.print("Enter Door ID: ");
+			String doorId = scanner.next();
+			System.out.print("Enter Camera ID: ");
+			String cameraId1 = scanner.next();
+			securitySystemService.addDoor(doorId, cameraId1);
+			break;
+		case 7:
+			System.out.println("Enter Camera ID to open the door");
+			String cameraId2 = scanner.next();
+			securitySystemService.openDoorByCameraId(cameraId2);
+			break;
+		case 8:
+			System.out.println("Enter Camera ID to close the door");
+			String cameraId3 = scanner.next();
+			securitySystemService.closeDoorByCameraId(cameraId3);
+			break;
+		case 9:
+			System.out.println("Enter Door ID to check Status");
+			String doorId1 = scanner.next();
+			securitySystemService.getDoorStatus(doorId1);
+			break;
 		default:
 			System.out.println("Invalid choice");
 		}
