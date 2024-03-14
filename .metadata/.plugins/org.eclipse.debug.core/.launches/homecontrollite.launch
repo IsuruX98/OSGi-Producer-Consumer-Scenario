@@ -1012,9 +1012,11 @@
         <setEntry value="slf4j.simple@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="HomeControl_All_Consumer@default:default"/>
         <setEntry value="HomeControl_lite_Consumer@default:default"/>
         <setEntry value="LightControlProducer@default:default"/>
         <setEntry value="SecuritySystemProducer@default:default"/>
+        <setEntry value="SmartAppControlProducer@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>

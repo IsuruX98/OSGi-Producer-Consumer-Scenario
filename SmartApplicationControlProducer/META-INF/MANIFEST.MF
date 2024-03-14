@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SmartApplicationControlProducer
+Bundle-SymbolicName: SmartApplicationControlProducer
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: SmartApplicationControlProducer
+Bundle-RequiredExecutionEnvironment: JavaSE-17
