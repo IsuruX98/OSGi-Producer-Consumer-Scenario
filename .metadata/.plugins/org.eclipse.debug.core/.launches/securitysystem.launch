@@ -1016,7 +1016,9 @@
         <setEntry value="slf4j.api@default:default"/>
         <setEntry value="slf4j.simple@default:default"/>
     </setAttribute>
-    <setAttribute key="selected_workspace_bundles"/>
+    <setAttribute key="selected_workspace_bundles">
+        <setEntry value="ThermistorControlProducer@default:default"/>
+    </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <booleanAttribute key="tracing" value="false"/>
     <booleanAttribute key="useCustomFeatures" value="false"/>
