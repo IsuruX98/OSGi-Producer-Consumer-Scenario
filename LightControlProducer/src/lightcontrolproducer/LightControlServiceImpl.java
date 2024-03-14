@@ -160,6 +160,12 @@ public class LightControlServiceImpl implements LightControlService {
 	}
 	
 	@Override
+    public Map<String, Object> getPresetDetails(String presetName) {
+        return presets.get(presetName);
+    }
+
+	
+	@Override
     public List<String> getAvailablePresets() {
         return new ArrayList<>(presets.keySet());
     }

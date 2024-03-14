@@ -14,4 +14,5 @@ public interface LightControlService {
     void addLight(String lightId, boolean status, int brightness, String color); // New method to add lights
     List<String> getAvailablePresets();
     Map<String, String> getAllLights();
+    Map<String, Object> getPresetDetails(String presetName);
 }
