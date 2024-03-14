@@ -1,4 +1,11 @@
 eclipse.preferences.version=1
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/description=
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/isSystem=true
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/name=dropins
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/provider=
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/uri=file\:/E\:/Projects/SLIIT/OSGi/.metadata/.plugins/org.eclipse.pde.core/all/org.eclipse.osgi/395/data/listener_1925729951/
+repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_all_org.eclipse.osgi_395_data_listener_1925729951/version=1
 repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_brightTouch_org.eclipse.osgi_393_data_listener_1925729951/description=
 repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_brightTouch_org.eclipse.osgi_393_data_listener_1925729951/isSystem=true
 repositories/file\:_E\:_Projects_SLIIT_OSGi_.metadata_.plugins_org.eclipse.pde.core_brightTouch_org.eclipse.osgi_393_data_listener_1925729951/name=dropins

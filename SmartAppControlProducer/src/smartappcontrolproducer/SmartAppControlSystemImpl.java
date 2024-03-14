@@ -14,7 +14,7 @@ public class SmartAppControlSystemImpl implements SmartAppControlSystem {
         // Initialize the Smart Apps
         applianceStatus.put("Washing Machine", false);
         applianceStatus.put("Refrigerators", false);
-        applianceStatus.put("humidifier", false);
+        applianceStatus.put("humidifier", false);       
         
     }
 
